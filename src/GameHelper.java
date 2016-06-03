@@ -37,6 +37,27 @@ public class GameHelper {
         if ((comCount%2) == 1) {
             incr = gridLength;
         }
+
+        while (!success & attempts++ < 200) {
+            location = (int) (Math.random()*gridSize);
+            int x = 0;
+            success = true;
+            while (success && x < comSize) {
+                if (grid[location] == 0) {
+                    coords[x++] = location;
+                    location += incr;
+                    if (location >= gridSize) {
+                        success = false;
+                    }
+                    if (x > 0 && (location%gridLength == 0)) {
+                        success = false;
+                    }
+                } else {
+                    success = false;
+                }
+            }
+        }
+
         
         return alphaCells;
     }
