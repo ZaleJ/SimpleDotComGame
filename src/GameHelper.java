@@ -2,6 +2,8 @@
  * Created by Administrator on 2016/6/2 0002.
  */
 import java.io.*;
+import java.util.ArrayList;
+
 public class GameHelper {
     private static final String alphabet = "abcdefg";
     private int gridLength = 7;
@@ -21,6 +23,22 @@ public class GameHelper {
         return inputLine.toLowerCase();
     }
 
-    
+    public ArrayList<String> placeDotCom(int comSize) {
+        ArrayList<String> alphaCells = new ArrayList<String>();
+        String [] alphacoords = new String[comSize];        // save temprary string
+        String temp = null;
+        int [] coords = new int[comSize];
+        int attempts = 0;
+        boolean success = false;
+        int location = 0;
+
+        comCount++;
+        int incr = 1;
+        if ((comCount%2) == 1) {
+            incr = gridLength;
+        }
+        
+        return alphaCells;
+    }
 
 }
