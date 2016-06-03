@@ -3,6 +3,7 @@
  */
 import java.io.*;
 import java.util.ArrayList;
+import java.util.StringJoiner;
 
 public class GameHelper {
     private static final String alphabet = "abcdefg";
@@ -58,7 +59,18 @@ public class GameHelper {
             }
         }
 
-        
+        int x = 0;
+        int row = 0;
+        int colum = 0;
+        while (x < comSize) {
+            grid[coords[x]] = 1;
+            row = (int) (coords[x]/gridLength);
+            colum = coords[x] % gridLength;
+            temp = String.valueOf(alphabet.charAt(colum));
+
+            alphaCells.add(temp.concat(Integer.toString(row)));
+            x++;
+        }
         return alphaCells;
     }
 
